@@ -1,4 +1,5 @@
 import json
+from dotenv import load_dotenv
 import requests
 from .literals import TribunalLiteral
 from agno.tools import tool
@@ -8,6 +9,8 @@ from agno.knowledge.embedder.openai import OpenAIEmbedder
 from agno.knowledge.knowledge import Knowledge
 from agno.vectordb.lancedb import LanceDb
 from .literals import TribunalLiteral
+
+load_dotenv()
 
 @tool
 def search_datajud_api(cls, tribunal: TribunalLiteral, process_number: str) -> str:

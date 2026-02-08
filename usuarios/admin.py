@@ -1,3 +1,4 @@
 from django.contrib import admin
 
-# Register your models here.
+def ready(self):
+    import usuarios.signals
